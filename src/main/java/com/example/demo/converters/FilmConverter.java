@@ -24,7 +24,7 @@ public class FilmConverter {
                 .filmId(idGenerate.idGenerate())
                 .filmName(filmDto.getFilmName())
                 .actorList(filmDto.getActorList())
-                .imdbRanking(imdbRanking.imdbRanking())
+                .imdbRanking(imdbRanking.imdbRanking(filmDto.getFilmName()))
                 .year(filmDto.getYear())
                 .durationMin(filmDto.getDurationMin())
                 .description(filmDto.getDescription())

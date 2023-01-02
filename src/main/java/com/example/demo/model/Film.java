@@ -21,7 +21,7 @@ public class Film {
     private Long filmId;
     private String filmName;
     private List<Actor> actorList;
-    private Long imdbRanking;
+    private Integer imdbRanking;
     private Long year;
     private Long durationMin;
     private String description;
