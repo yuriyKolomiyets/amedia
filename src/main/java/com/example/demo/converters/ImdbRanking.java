@@ -1,8 +1,10 @@
 package com.example.demo.converters;
 
 import com.example.demo.dto.ImdbJsonModel;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+@Component
 public class ImdbRanking {
 
     private final String host;

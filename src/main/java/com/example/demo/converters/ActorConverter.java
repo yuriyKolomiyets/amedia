@@ -2,7 +2,9 @@ package com.example.demo.converters;
 
 import com.example.demo.dto.ActorDto;
 import com.example.demo.model.Actor;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ActorConverter {
 
     private final IdGenerate idGenerate;

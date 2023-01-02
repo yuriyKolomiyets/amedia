@@ -3,7 +3,9 @@ package com.example.demo.converters;
 import com.example.demo.dto.FilmDto;
 import com.example.demo.model.Film;
 import com.example.demo.model.MaxQuality;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FilmConverter {
 
     private final IdGenerate idGenerate;
