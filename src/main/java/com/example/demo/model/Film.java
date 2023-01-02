@@ -1,7 +1,12 @@
 package com.example.demo.model;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.ManyToMany;
 import lombok.*;
+import org.springframework.data.annotation.Id;
 
+import javax.sound.sampled.AudioFileFormat;
 import java.util.List;
 
 @Getter
@@ -11,6 +16,8 @@ import java.util.List;
 @Builder
 public class Film {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long filmId;
     private String filmName;
     private List<Actor> actorList;
@@ -19,7 +26,11 @@ public class Film {
     private Long durationMin;
     private String description;
     private Enum <MaxQuality> maxQuality;
-    private List<String> languagesAudio;
-    private List<String> languagesSubtitles;
+
+    @ManyToMany
+    private List <Language> languagesAudio;
+
+    @ManyToMany
+    private List <Language> languagesSubtitles;
 
 }
