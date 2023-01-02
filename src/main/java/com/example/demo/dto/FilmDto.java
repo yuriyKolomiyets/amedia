@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 import com.example.demo.model.Actor;
+import com.example.demo.model.Language;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,6 @@ public class FilmDto {
     private Long durationMin;
     private String description;
     private String maxQuality;
-    private List<String> languagesAudio;
-    private List<String> languagesSubtitles;
+    private List<Language> languagesAudio;
+    private List<Language> languagesSubtitles;
 }
