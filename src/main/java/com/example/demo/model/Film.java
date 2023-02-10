@@ -1,14 +1,11 @@
 package com.example.demo.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
-import javax.sound.sampled.AudioFileFormat;
 import java.util.List;
 
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,19 +15,24 @@ public class Film {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long filmId;
+    private Long id;
     private String filmName;
+
+    @ManyToMany
+    @JoinTable(name = "actor_list",
+            joinColumns = @JoinColumn(name = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "actor_id"))
     private List<Actor> actorList;
+
     private Integer imdbRanking;
     private Long year;
     private Long durationMin;
     private String description;
+
+    @Enumerated(EnumType.ORDINAL)
     private Enum <MaxQuality> maxQuality;
 
-    @ManyToMany
+    @OneToMany(mappedBy="film")
     private List <Language> languagesAudio;
-
-    @ManyToMany
-    private List <Language> languagesSubtitles;
 
 }

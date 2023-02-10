@@ -12,12 +12,12 @@ public class FilmServiceImpl implements FilmService {
     private final FilmRepository filmRepository;
 
     @Override
-    public Film saveFilmToDB(Film film) {
+    public Film save(Film film) {
         return filmRepository.save(film);
     }
 
     @Override
-    public Film getFilmFromDB(Long filmId) {
+    public Film get(Long filmId) {
         return filmRepository.findById(filmId).orElseThrow();
     }
 

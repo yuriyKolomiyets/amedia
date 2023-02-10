@@ -4,7 +4,7 @@ import com.example.demo.model.Film;
 
 public interface FilmService {
 
-    Film saveFilmToDB(Film film);
-    Film getFilmFromDB(Long filmId);
+    Film save(Film film);
+    Film get(Long filmId);
     Film sendNewFilmToProvider(Long id);
 }

@@ -12,12 +12,12 @@ public class ActorServiceImpl implements ActorService {
     private final ActorRepository actorRepository;
 
     @Override
-    public Actor saveActorToDB(Actor actor) {
+    public Actor save(Actor actor) {
         return actorRepository.save(actor);
     }
 
     @Override
-    public Actor getActorFromDB(Long actorId) {
+    public Actor get(Long actorId) {
         return actorRepository.findById(actorId).orElseThrow();
     }
 }

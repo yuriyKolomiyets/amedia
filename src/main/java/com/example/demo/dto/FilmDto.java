@@ -21,5 +21,4 @@ public class FilmDto {
     private String description;
     private String maxQuality;
     private List<Language> languagesAudio;
-    private List<Language> languagesSubtitles;
 }

@@ -23,7 +23,7 @@ public class FilmConverter {
         }
 
         return Film.builder()
-                .filmId(idGenerate.idGenerate())
+                .id(idGenerate.idGenerate())
                 .filmName(filmDto.getFilmName())
                 .actorList(filmDto.getActorList())
                 .imdbRanking(imdbRanking.imdbRanking(filmDto.getFilmName()))
@@ -32,7 +32,6 @@ public class FilmConverter {
                 .description(filmDto.getDescription())
                 .maxQuality(Enum.valueOf(MaxQuality.class, filmDto.getMaxQuality()))
                 .languagesAudio(filmDto.getLanguagesAudio())
-                .languagesSubtitles(filmDto.getLanguagesSubtitles())
                 .build();
     }
 }

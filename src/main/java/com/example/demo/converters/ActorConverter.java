@@ -19,7 +19,7 @@ public class ActorConverter {
             return null;
         }
         return Actor.builder()
-                .actorId(idGenerate.idGenerate())
+                .id(idGenerate.idGenerate())
                 .country(actorDto.getCountry())
                 .lastName(actorDto.getLastName())
                 .name(actorDto.getName())

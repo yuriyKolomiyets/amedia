@@ -1,20 +1,24 @@
 package com.example.demo.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Builder
 public class Language {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long actorId;
+    private Long id;
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "film_id")
+    private Film film;
+
 }

@@ -1,12 +1,11 @@
 package com.example.demo.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 import java.util.List;
 
+@Entity
 @Getter
 @Setter
 @Builder
@@ -15,9 +14,14 @@ import java.util.List;
 public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long actorId;
+    private Long id;
+
     private String name;
     private String lastName;
     private String country;
+
+    @ManyToMany (mappedBy = "actorList")
+    private List<Film> filmList;
+
 
 }

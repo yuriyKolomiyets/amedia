@@ -16,9 +16,9 @@ public class FilmController {
     private final FilmService filmService;
     private final FilmConverter filmConverter;
 
-    @RequestMapping(value = "/api/film/id/{id}}", method = GET)
+    @RequestMapping(value = "/api/film/id/{id}", method = GET)
     public Film getFilm(@PathVariable Long filmId) {
-        return filmService.getFilmFromDB(filmId);
+        return filmService.get(filmId);
     }
 
     @PutMapping(value = "api/id/{id}/update")
@@ -28,6 +28,6 @@ public class FilmController {
 
     @PostMapping(value = "/film/create")
     public Film createFilm(@RequestBody FilmDto filmDto) {
-        return filmService.saveFilmToDB(filmConverter.convertFilmDtoToFilm(filmDto));
+        return filmService.save(filmConverter.convertFilmDtoToFilm(filmDto));
     }
 }
