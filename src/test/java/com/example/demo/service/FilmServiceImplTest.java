@@ -46,7 +46,4 @@ class FilmServiceImplTest {
         assertThrows(Exception.class, () -> filmService.get(2L));
     }
 
-    @Test
-    void sendNewFilmToProvider() {
-    }
 }
